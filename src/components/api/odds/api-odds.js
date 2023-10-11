@@ -115,7 +115,7 @@ function OddsApi(){
             {externalData.map(data =>(
                 <div>
                     <div>
-                      {/* <p>{data.Name}</p> */}
+                      <p>{data.Name}</p>
                     </div>
                     <div>
                     {data.Matches.map(match => (
