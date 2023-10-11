@@ -21,9 +21,13 @@ const DataRow = styled.div`
     gap:2px;
     padding:7px 5px;
     background-color: #252525;
-    margin:5px 0px;
+    margin:5px auto;
     font-size:9px;
     font-weigth:300;
+    
+    @media screen and (min-width:780px){
+        max-width:500px;
+    }
     `
 
 const MatchType = styled.p`
@@ -38,6 +42,10 @@ const CompContainer = styled.div`
     justify-content:center;
     align-items:center;
     width:100%;
+
+    @media screen and(min-width:780px){
+        width:500px;
+    }
 `
 
 const CompLogo = styled.img`

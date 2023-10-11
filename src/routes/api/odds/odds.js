@@ -37,14 +37,14 @@ function OddsRoute() {
             <GlobalStyle />
             <div>
                 <h1>
-                    { internalAPI.data.attributes.Title }
+                    {/* { internalAPI.data.attributes.Title } */}
                 </h1>
             </div>
             
             <OddsApi />
             
             <ReactMarkdown>
-                { internalAPI.data.attributes.Body }
+                {/* { internalAPI.data.attributes.Body } */}
             </ReactMarkdown>
         </div>
     );
