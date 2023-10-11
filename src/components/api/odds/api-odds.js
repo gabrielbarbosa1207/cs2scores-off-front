@@ -129,7 +129,7 @@ function OddsApi(){
                             <CompContainer>
                                 <OddsContainer>
                                     <CompDiv>
-                                        <CompLogo  src={`https://${match.Competitors[0].Logo}` } alt={GGBET} />
+                                        <CompLogo  src={`https://${match.Competitors[0].Logo}` } alt="GGBET" />
                                         <CompName>
                                             {match.Competitors[0].Name}
                                         </CompName>
