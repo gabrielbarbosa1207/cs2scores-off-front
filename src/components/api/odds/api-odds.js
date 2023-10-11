@@ -129,7 +129,7 @@ function OddsApi(){
                             <CompContainer>
                                 <OddsContainer>
                                     <CompDiv>
-                                        <CompLogo  src={`https://${match.Competitors[0].Logo}` } alt="GGBET" />
+                                        <CompLogo  src={`https://${match.Competitors[0].Logo}` } alt={"https://cdn.gin.bet/team/CSGO64fe198f21ccd789493425.png"} />
                                         <CompName>
                                             {match.Competitors[0].Name}
                                         </CompName>
@@ -143,7 +143,7 @@ function OddsApi(){
                                         {match.Bets[0].Odds[1].Value}
                                     </Odd>
                                 <CompDiv>
-                                    <CompLogo alt={GGBET} src={`https://${match.Competitors[1].Logo}`} />
+                                    <CompLogo alt={"https://cdn.gin.bet/team/CSGO64fe198f21ccd789493425.png"} src={`https://${match.Competitors[1].Logo}`} />
                                     <CompName>
                                         {match.Competitors[1].Name}
                                     </CompName>
