@@ -38,7 +38,7 @@ const MatchType = styled.p`
 
 const CompContainer = styled.div`
     display:flex;
-    gap:18px;
+    gap:17px;
     justify-content:center;
     align-items:center;
     width:100%;
