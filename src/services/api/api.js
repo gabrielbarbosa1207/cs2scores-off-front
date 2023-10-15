@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const appAPIs = axios.create({baseURL:"http://localhost:1337/api/odds/1"})
+const appAPIs = axios.create({baseURL:"https://cs2-scores-fqzme.ondigitalocean.app/api/odds/1"})
 const externalApi = axios.create({baseURL:"https://odds.data.bet/affiliates/ErIr2R58xU6f3dYYNv-fJA/json"})
 
 async function getMatchesBySlug(){
