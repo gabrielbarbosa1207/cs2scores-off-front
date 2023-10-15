@@ -19,7 +19,8 @@ html,body{
 
 
 function OddsRoute() {
-    const [internalAPI, setInternalApi] = useState([]);
+    const [internalAPI, setInternalApi] = useState({ data: { attributes: {} } });
+
 
     useEffect(() => {
         fetchOdds()
