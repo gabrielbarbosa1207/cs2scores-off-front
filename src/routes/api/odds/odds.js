@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createGlobalStyle } from "styled-components";
-import { getMatchesBySlug } from "../../../services/api/api";
+import { getOdds } from "../../../services/api/api";
 import ReactMarkdown from 'react-markdown';
 import OddsApi from "../../../components/api/odds/api-odds";
 
@@ -27,7 +27,7 @@ function OddsRoute() {
     }, [])
 
     async function fetchOdds(){
-        const response = await getMatchesBySlug()
+        const response = await getOdds()
         setInternalApi(response)
     }
 

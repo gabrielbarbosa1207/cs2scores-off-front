@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { createGlobalStyle } from "styled-components";
-import { getMatchesBySlug } from "../../../services/api/api";
-import MatchesAPI from "../../../components/api/matches/api-matches";
+import { getMatches } from "../../../services/api/api";
 import ReactMarkdown from 'react-markdown';
+import OddsApi from "../../../components/api/odds/api-odds";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -21,29 +21,32 @@ html,body{
 function MatchesRoute() {
     const [internalAPI, setInternalApi] = useState([]);
 
+
     useEffect(() => {
         fetchOdds()
     }, [])
 
     async function fetchOdds(){
-        const response = await getMatchesBySlug()
+        const response = await getMatches()
         setInternalApi(response)
     }
+
+    console.log("Internal API", internalAPI)
 
     return (
         <div>
             <GlobalStyle />
-            {internalAPI.data.map(content => (
-                <h1 key={content.id}>
-                    {content.attributes.Title}
+            <div>
+                <h1>
+                {internalAPI?.data?.attributes?.Title}
                 </h1>
-            ))}
-            <MatchesAPI />
-            {internalAPI.data.map(content => (
-                <ReactMarkdown>
-                    { content.attributes.Body }
-                </ReactMarkdown>
-            ))}
+            </div>
+            
+            <OddsApi />
+            
+            <ReactMarkdown>
+                { internalAPI?.data?.attributes?.Body }
+            </ReactMarkdown>
         </div>
     );
 }
