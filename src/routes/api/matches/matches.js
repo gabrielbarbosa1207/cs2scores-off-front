@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createGlobalStyle } from "styled-components";
 import { getMatches } from "../../../services/api/api";
 import ReactMarkdown from 'react-markdown';
+import styled from "styled-components";
 import MatchesAPI from "../../../components/api/matches/api-matches";
 
 
@@ -14,6 +15,21 @@ html,body{
     font-family: 'Inter', sans-serif;
   }
 `;
+
+
+const BodyContainer = styled.div`
+    @media (min-width: 780px) {
+        max-width: calc(100% - 500px);
+        margin: auto;
+    }
+`
+
+const TitleContainer = styled.div`
+    @media (min-width: 780px) {
+        max-width: calc(100% - 500px);
+        margin: auto;
+    }
+`
 
 // If the API is supposed to return more information, adapt this accordingly.
 
@@ -36,17 +52,19 @@ function MatchesRoute() {
     return (
         <div>
             <GlobalStyle />
-            <div>
+            <TitleContainer>
                 <h1>
-                {internalAPI?.data?.attributes?.Title}
+                    {internalAPI?.data?.attributes?.Title}
                 </h1>
-            </div>
+            </TitleContainer>
 
             <MatchesAPI />
-            
-            <ReactMarkdown>
-                { internalAPI?.data?.attributes?.Body }
-            </ReactMarkdown>
+
+            <BodyContainer>
+                <ReactMarkdown>
+                    { internalAPI?.data?.attributes?.Body }
+                </ReactMarkdown>
+            </BodyContainer>
         </div>
     );
 }

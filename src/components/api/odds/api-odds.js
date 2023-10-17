@@ -42,7 +42,6 @@ const MatchType = styled.p`
 
 const CompContainer = styled.div`
     display:flex;
-    gap:15px;
     width:100%;
     align-items:center;
     justify-content:center;
@@ -102,7 +101,7 @@ const OddsContainer = styled.div`
     align-items:center;
 
     @media(min-width:1160px){
-        width:250px;
+        width:200px;
     }
 
     `
