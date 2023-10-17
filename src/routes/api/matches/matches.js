@@ -59,7 +59,7 @@ function MatchesRoute() {
                     </title>
                     <meta name="description" content={ internalAPI?.data?.attributes?.MetaDescription } />
 
-                    <link rel="canonical" href={`https://wwww.cs2scores.com/matches`} />
+                    <link rel="canonical" href={`https://www.cs2scores.com/matches`} />
 
                     {/* OpenGraph Tags for Facebook/Instagram */}
                     <meta property="og:title" content={ internalAPI?.data?.attributes?.MetaTitle } />
