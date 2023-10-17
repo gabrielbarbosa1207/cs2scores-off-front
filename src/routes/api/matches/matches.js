@@ -59,12 +59,12 @@ function MatchesRoute() {
                     </title>
                     <meta name="description" content={ internalAPI?.data?.attributes?.MetaDescription } />
 
-                    <link rel="canonical" href={`https://www.cs2scores.com/matches`} />
+                    <link rel="canonical" href={`https://cs2scores.com/matches`} />
 
                     {/* OpenGraph Tags for Facebook/Instagram */}
                     <meta property="og:title" content={ internalAPI?.data?.attributes?.MetaTitle } />
                     <meta property="og:description" content={ internalAPI?.data?.attributes?.MetaDescription } />
-                    <meta property="og:url" content={`https://wwww.cs2scores.com/matches`} />
+                    <meta property="og:url" content={`https://cs2scores.com/matches`} />
                     <meta property="og:image" content={`https://cdn.gin.bet/team/CSGO64fe198f21ccd789493425.png`} />
 
                     {/* Twitter Card tags */}
@@ -80,7 +80,7 @@ function MatchesRoute() {
                         "@type": "Article",
                         "mainEntityOfPage": {
                             "@type": "WebPage",
-                            "@id": "https://wwww.cs2scores.com/matches"
+                            "@id": "https://cs2scores.com/matches"
                         },
                         "headline": "CS2 Matches & Live Scores",
                         "image": [
