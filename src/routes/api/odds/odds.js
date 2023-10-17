@@ -57,6 +57,55 @@ function OddsRoute() {
                         { internalAPI?.data?.attributes?.MetaTitle }
                     </title>
                     <meta name="description" content={ internalAPI?.data?.attributes?.MetaDescription } />
+
+                    <meta name="description" content={ internalAPI?.data?.attributes?.MetaDescription } />
+
+                    <link rel="canonical" href={`https://wwww.cs2scores.com/odds`} />
+
+                    {/* OpenGraph Tags for Facebook/Instagram */}
+                    <meta property="og:title" content={ internalAPI?.data?.attributes?.MetaTitle } />
+                    <meta property="og:description" content={ internalAPI?.data?.attributes?.MetaDescription } />
+                    <meta property="og:url" content={`https://wwww.cs2scores.com/odds`} />
+                    <meta property="og:image" content={`https://cdn.gin.bet/team/CSGO64fe198f21ccd789493425.png`} />
+
+                    {/* Twitter Card tags */}
+                    <meta name="twitter:card" content="CS2 Scores" />
+                    <meta name="twitter:title" content={internalAPI?.data?.attributes?.MetaTitle} />
+                    <meta name="twitter:description" content={internalAPI?.data?.attributes?.MetaDescription} />
+                    <meta name="twitter:image" content={`https://cdn.gin.bet/team/CSGO64fe198f21ccd789493425.png`} />
+
+                    <script type="application/ld+json">
+                    {`
+                        {
+                        "@context": "http://schema.org",
+                        "@type": "Article",
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": "https://wwww.cs2scores.com/odds"
+                        },
+                        "headline": "CS2 Betting Odds",
+                        "image": [
+                            "https://cdn.gin.bet/team/CSGO64fe198f21ccd789493425.png"
+                        ],
+                        "datePublished": "2023-10-15T19:24:07.515Z", 
+                        "dateModified": "2023-10-17T19:04:04.033Z",
+                        "author": {
+                            "@type": "Person",
+                            "name": "William Westerlund"
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "William Westerlund",
+                            "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://cdn.gin.bet/team/CSGO64fe198f21ccd789493425.png"
+                            }
+                        },
+                        "description": "Discover the best CS2 betting odds for all of the major games. View and compare Counter-Strike betting lines for major and small tournaments."
+                        }
+                    `}
+                </script>
+
                 </Helmet>
                 <TitleContainer>
                     <h1>

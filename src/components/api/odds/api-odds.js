@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { getExternalMatchesData } from "../../../services/api/api";
 import Date from "../../date/Date";
 import styled from "styled-components";
