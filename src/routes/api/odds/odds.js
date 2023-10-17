@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { getOdds } from "../../../services/api/api";
 import ReactMarkdown from 'react-markdown';
 import OddsApi from "../../../components/api/odds/api-odds";
+import { Helmet } from "react-helmet"
 
 
 const GlobalStyle = createGlobalStyle`
@@ -34,7 +35,7 @@ const TitleContainer = styled.div`
 
 
 function OddsRoute() {
-    const [internalAPI, setInternalApi] = useState({ data: { attributes: {} } });
+    const [internalAPI, setInternalApi] = useState([]);
 
 
     useEffect(() => {
@@ -51,16 +52,22 @@ function OddsRoute() {
     return (
         <div>
             <GlobalStyle />
+                <Helmet>
+                    <title>
+                        { internalAPI?.data?.attributes?.MetaTitle }
+                    </title>
+                    <meta name="description" content={ internalAPI?.data?.attributes?.MetaDescription } />
+                </Helmet>
                 <TitleContainer>
                     <h1>
-                        { internalAPI.data.attributes.Title }
+                        { internalAPI?.data?.attributes?.Title }
                     </h1>
                 </TitleContainer>
             
             <OddsApi />
             <BodyContainer>
                 <ReactMarkdown>
-                    { internalAPI.data.attributes.Body }
+                    { internalAPI?.data?.attributes?.Body }
                 </ReactMarkdown>
             </BodyContainer>
             

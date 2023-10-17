@@ -4,6 +4,7 @@ import { getMatches } from "../../../services/api/api";
 import ReactMarkdown from 'react-markdown';
 import styled from "styled-components";
 import MatchesAPI from "../../../components/api/matches/api-matches";
+import { Helmet } from "react-helmet";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -52,6 +53,12 @@ function MatchesRoute() {
     return (
         <div>
             <GlobalStyle />
+                <Helmet>
+                    <title>
+                        { internalAPI?.data?.attributes?.MetaTitle }
+                    </title>
+                    <meta name="description" content={ internalAPI?.data?.attributes?.MetaDescription } />
+                </Helmet>
             <TitleContainer>
                 <h1>
                     {internalAPI?.data?.attributes?.Title}
