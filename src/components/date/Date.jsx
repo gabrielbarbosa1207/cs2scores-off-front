@@ -12,13 +12,13 @@ const DateWrapper = styled.div`
 `;
 
 const TimeText = styled.span`
-  color: white;
+  color: gray;
   font-weight: 700;
   display: block;
 `;
 
 const DateText = styled.span`
-  color: white;
+  color: gray;
   font-weight: 400;  // lighter compared to the time
   display: block;
   font-size: 0.8em;  // making it smaller
