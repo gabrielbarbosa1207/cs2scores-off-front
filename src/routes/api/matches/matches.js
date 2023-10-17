@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createGlobalStyle } from "styled-components";
 import { getMatches } from "../../../services/api/api";
 import ReactMarkdown from 'react-markdown';
-import OddsApi from "../../../components/api/odds/api-odds";
+import MatchesAPI from "../../../components/api/matches/api-matches";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -41,8 +41,8 @@ function MatchesRoute() {
                 {internalAPI?.data?.attributes?.Title}
                 </h1>
             </div>
-            
-            <OddsApi />
+
+            <MatchesAPI />
             
             <ReactMarkdown>
                 { internalAPI?.data?.attributes?.Body }
