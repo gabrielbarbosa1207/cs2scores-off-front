@@ -131,7 +131,6 @@ const Iframe = styled.iframe`
     display:block;
     border:1px solid #1c1c1c;
 `
-// If the API is supposed to return more information, adapt this accordingly.
 
 
 function OddsRoute() {
@@ -206,14 +205,7 @@ function OddsRoute() {
                     `}
                 </script>
 
-                </Helmet>
-
-{/* 
-            <TitleContainer>
-                <h1>
-                    { internalAPI?.data?.attributes?.Title }
-                </h1>
-            </TitleContainer> */}
+            </Helmet>
 
             <ApiSection>
                 <SideContainer>

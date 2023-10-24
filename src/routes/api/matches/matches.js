@@ -5,34 +5,133 @@ import ReactMarkdown from 'react-markdown';
 import styled from "styled-components";
 import MatchesAPI from "../../../components/api/matches/api-matches";
 import { Helmet } from "react-helmet";
+import SideMenu from "../../../components/partials/side-menu";
+import Background from "../../../components/images/bg-vlt.svg"
 
 
 const GlobalStyle = createGlobalStyle`
 html,body{
     margin: 0px;
-    padding: 20px 8px 40px 8px;
+    padding: 0px 0px 40px 0px;
     background-color:#1c1c1c;
     color:white;
     font-family: 'Inter', sans-serif;
+    overflow-x:hidden !important;
+
+    @media (min-width:780px){
+        padding: 0px 3px 40px 0px;
+    }
+    
+  }
+
+  h1{
+    margin: auto;
+    height:auto;
   }
 `;
 
+const Headline = styled.h1`
+  text-align:left;
+  font-size:22px;
+  text-shadow:0px 0px 5px black;
+ 
+  @media (min-width:780px){
+    font-size:32px
+  }
+`
 
 const BodyContainer = styled.div`
+    padding: 0px 8px;
+    color:gray;
+
+    p{
+        14px;
+    }
+
     @media (min-width: 780px) {
-        max-width: calc(100% - 500px);
-        margin: auto;
+        margin-left:260px;
+        width:calc(100% - 450px)
     }
 `
 
 const TitleContainer = styled.div`
+    height: 120px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${Background});
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     @media (min-width: 780px) {
-        max-width: calc(100% - 500px);
+        width: 100%;
         margin: auto;
+        text-align: center;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+`;
+
+
+const ApiSection = styled.div`
+    
+    display:flex;
+    flex-direction:column;
+
+    @media (min-width:780px){
+    display:flex;
+    flex-direction:row;
     }
 `
 
-// If the API is supposed to return more information, adapt this accordingly.
+const ContentSection = styled.div`
+    width:100%;
+    padding: 0px;
+    margin:0px;
+`
+
+const SideContainer = styled.div`
+    @media(min-width:780px){
+        width:310px;
+    }
+`
+const SideAds = styled.div`
+
+    display:none;
+
+    @media (min-width:780px){
+        width: 300px;
+        display:block;
+    }
+`;
+
+const SideBar = styled.div`
+    display: none;
+
+    @media (min-width:780px){
+        display: block;
+        width: 305px;
+    }
+`;
+
+
+
+const DataSection = styled.div`
+    display:flex;
+    position:relative;
+`
+
+const Iframe = styled.iframe`
+    width:290px;
+    height:600px;
+    margin: 5px auto;
+    overflow-x:hidden;
+    display:block;
+    border:1px solid #1c1c1c;
+`
 
 
 function MatchesRoute() {
@@ -104,16 +203,29 @@ function MatchesRoute() {
                         }
                     `}
                 </script>
+            </Helmet>
 
-                    
-                </Helmet>
-            <TitleContainer>
-                <h1>
-                    {internalAPI?.data?.attributes?.Title}
-                </h1>
-            </TitleContainer>
-
-            <MatchesAPI />
+            <ApiSection>
+                <SideContainer>
+                    <SideMenu />
+                </SideContainer>
+                <ContentSection>                    
+                    <TitleContainer bgImage={Background}>
+                        <Headline>
+                            { internalAPI?.data?.attributes?.Title }
+                        </Headline>
+                    </TitleContainer>
+                    <DataSection>
+                        <MatchesAPI />
+                        <SideAds>
+                            <SideBar>
+                                <Iframe src="https://valorantbettingsites.com/go/ggbet">
+                                </Iframe>
+                            </SideBar>
+                        </SideAds>
+                    </DataSection>
+                </ContentSection>
+            </ApiSection>
 
             <BodyContainer>
                 <ReactMarkdown>
