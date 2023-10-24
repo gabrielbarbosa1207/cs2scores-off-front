@@ -113,10 +113,14 @@ const Odd = styled.div`
 
 const MainContainer = styled.div`
     cursor:pointer;
+    width:100%;
+    padding:0px 8px;
 
     @media (min-width: 850px) {
-        max-width: calc(100% - 500px);
+        width: 100%;
         margin: auto;
+        padding:0px;
+
     }
 `
 
@@ -157,6 +161,7 @@ function OddsApi(){
 
     return(
         <MainContainer>
+
             {externalData.map(data =>(
                 <div>
                     <Tournament>

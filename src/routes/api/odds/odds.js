@@ -4,33 +4,123 @@ import { getOdds } from "../../../services/api/api";
 import ReactMarkdown from 'react-markdown';
 import OddsApi from "../../../components/api/odds/api-odds";
 import { Helmet } from "react-helmet"
+import SideMenu from "../../../components/partials/side-menu";
 
 
 const GlobalStyle = createGlobalStyle`
 html,body{
     margin: 0px;
-    padding: 20px 8px 40px 8px;
+    padding: 0px 0px 40px 0px;
     background-color:#1c1c1c;
     color:white;
     font-family: 'Inter', sans-serif;
+    overflow-x:hidden !important;
+
+    @media (min-width:780px){
+        padding: 0px 3px 40px 0px;
+    }
+    
+  }
+
+  h1{
+    margin: auto;
+    height:auto;
   }
 `;
 
+const Headline = styled.h1`
+  text-align:left;
+  font-size:22px
+`
+
 const BodyContainer = styled.div`
+    padding: 0px 8px;
+    color:gray;
+
+    p{
+        14px;
+    }
+
     @media (min-width: 780px) {
-        max-width: calc(100% - 500px);
-        margin: auto;
+        margin-left:260px;
+        width:calc(100% - 450px)
     }
 `
 
 const TitleContainer = styled.div`
+    height:120px;
+    background-color: gray;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
     @media (min-width: 780px) {
-        max-width: calc(100% - 500px);
+        width:100%;
         margin: auto;
+        text-align:center;
+        height:250px;
+        background-color: gray;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+     }
+`
+
+const ApiSection = styled.div`
+    
+    display:flex;
+    flex-direction:column;
+
+    @media (min-width:780px){
+    display:flex;
+    flex-direction:row;
     }
 `
 
+const ContentSection = styled.div`
+    width:100%;
+    padding: 0px;
+    margin:0px;
+`
 
+const SideContainer = styled.div`
+    @media(min-width:780px){
+        width:310px;
+    }
+`
+const SideAds = styled.div`
+
+    display:none;
+
+    @media (min-width:780px){
+        width: 250px;
+        display:block;
+    }
+`;
+
+const SideBar = styled.div`
+    display: none;
+
+    @media (min-width:780px){
+        display: block;
+        width: 255px;
+    }
+`;
+
+
+
+const DataSection = styled.div`
+    display:flex;
+    position:relative;
+`
+
+const Iframe = styled.iframe`
+    width:240px;
+    height:650px;
+    margin: 5px auto;
+    overflow-x:hidden;
+    display:block;
+`
 // If the API is supposed to return more information, adapt this accordingly.
 
 
@@ -107,13 +197,36 @@ function OddsRoute() {
                 </script>
 
                 </Helmet>
-                <TitleContainer>
-                    <h1>
-                        { internalAPI?.data?.attributes?.Title }
-                    </h1>
-                </TitleContainer>
+
+{/* 
+            <TitleContainer>
+                <h1>
+                    { internalAPI?.data?.attributes?.Title }
+                </h1>
+            </TitleContainer> */}
+
+            <ApiSection>
+                <SideContainer>
+                    <SideMenu />
+                </SideContainer>
+                <ContentSection>                    
+                    <TitleContainer>
+                        <Headline>
+                            { internalAPI?.data?.attributes?.Title }
+                        </Headline>
+                    </TitleContainer>
+                    <DataSection>
+                        <OddsApi />
+                        <SideAds>
+                            <SideBar>
+                                <Iframe src="https://valorantbettingsites.com/go/ggbet">
+                                </Iframe>
+                            </SideBar>
+                        </SideAds>
+                    </DataSection>
+                </ContentSection>
+            </ApiSection>
             
-            <OddsApi />
             <BodyContainer>
                 <ReactMarkdown>
                     { internalAPI?.data?.attributes?.Body }
