@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import OddsApi from "../../../components/api/odds/api-odds";
 import { Helmet } from "react-helmet"
 import SideMenu from "../../../components/partials/side-menu";
+import Background from "../../../components/images/bg-vlt.svg"
 
 
 const GlobalStyle = createGlobalStyle`
@@ -30,7 +31,12 @@ html,body{
 
 const Headline = styled.h1`
   text-align:left;
-  font-size:22px
+  font-size:22px;
+  text-shadow:0px 0px 5px black;
+ 
+  @media (min-width:780px){
+    font-size:32px
+  }
 `
 
 const BodyContainer = styled.div`
@@ -48,23 +54,26 @@ const BodyContainer = styled.div`
 `
 
 const TitleContainer = styled.div`
-    height:120px;
-    background-color: gray;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    height: 120px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${Background});
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (min-width: 780px) {
-        width:100%;
+        width: 100%;
         margin: auto;
-        text-align:center;
-        height:250px;
-        background-color: gray;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-     }
-`
+        text-align: center;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+`;
+
 
 const ApiSection = styled.div`
     
@@ -93,7 +102,7 @@ const SideAds = styled.div`
     display:none;
 
     @media (min-width:780px){
-        width: 250px;
+        width: 300px;
         display:block;
     }
 `;
@@ -103,7 +112,7 @@ const SideBar = styled.div`
 
     @media (min-width:780px){
         display: block;
-        width: 255px;
+        width: 305px;
     }
 `;
 
@@ -115,11 +124,12 @@ const DataSection = styled.div`
 `
 
 const Iframe = styled.iframe`
-    width:240px;
-    height:650px;
+    width:290px;
+    height:600px;
     margin: 5px auto;
     overflow-x:hidden;
     display:block;
+    border:1px solid #1c1c1c;
 `
 // If the API is supposed to return more information, adapt this accordingly.
 
@@ -210,7 +220,7 @@ function OddsRoute() {
                     <SideMenu />
                 </SideContainer>
                 <ContentSection>                    
-                    <TitleContainer>
+                    <TitleContainer bgImage={Background}>
                         <Headline>
                             { internalAPI?.data?.attributes?.Title }
                         </Headline>
