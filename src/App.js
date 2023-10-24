@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/odds" element={ <OddsRoute />}/>
-          <Route path="/matches" element={ <MatchesRoute />}/>
+          <Route path="/" element={ <MatchesRoute />}/>
         </Routes>
       </BrowserRouter>
     </div>
