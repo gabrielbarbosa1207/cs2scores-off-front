@@ -1,0 +1,10 @@
+{
+    "routes": [
+      {
+        "src": "/matches",
+        "dest": "/",
+        "statusCode": 301
+      }
+    ]
+  }
+  
