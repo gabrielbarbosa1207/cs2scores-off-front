@@ -1,10 +1,9 @@
 {
-    "routes": [
-      {
-        "src": "/matches",
-        "dest": "/",
+    "redirects": [
+      { 
+        "source": "/matches",
+        "destination": "/", 
         "statusCode": 301
       }
     ]
   }
-  
