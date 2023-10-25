@@ -158,7 +158,7 @@ function MatchesRoute() {
                     </title>
                     <meta name="description" content={ internalAPI?.data?.attributes?.MetaDescription } />
 
-                    <link rel="canonical" href={`https://cs2scores.com/matches`} />
+                    <link rel="canonical" href={`https://cs2scores.com/`} />
 
                     {/* OpenGraph Tags for Facebook/Instagram */}
                     <meta property="og:title" content={ internalAPI?.data?.attributes?.MetaTitle } />
@@ -193,7 +193,7 @@ function MatchesRoute() {
                         },
                         "publisher": {
                             "@type": "Organization",
-                            "name": "William Westerlund",
+                            "name": "CS2 Scores",
                             "logo": {
                             "@type": "ImageObject",
                             "url": "https://cdn.gin.bet/team/CSGO64fe198f21ccd789493425.png"
