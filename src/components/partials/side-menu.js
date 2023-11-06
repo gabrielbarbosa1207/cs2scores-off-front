@@ -93,7 +93,7 @@ class SideMenu extends React.Component {
                     </Item>
                 </MenuItem>
             </a>
-            <a id="matches" className="menu-item" href="/matches">
+            <a id="matches" className="menu-item" href="/">
                 <MenuItem>
                     <img src={MatchesIcon}  alt='nav icon' />
                     <Item>
