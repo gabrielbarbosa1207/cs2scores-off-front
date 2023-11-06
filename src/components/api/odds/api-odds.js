@@ -32,6 +32,12 @@ const DataRow = styled.div`
     font-size:9px;
     font-weigth:300;
 
+    &:hover {
+        background-color: #353535; /* New background color on hover */
+        cursor: pointer; /* Optional: Changes the cursor to a pointer to indicate it's clickable */
+        /* You can add more styles here that you want to apply on hover */
+      }
+
 `
 
 const MatchType = styled.p`
@@ -79,7 +85,7 @@ const OperatorDiv = styled.div`
     cursor:pointer;
 
     @media (min-width:850px){
-        background-color: #252525;
+        background-color: transparent;
         border-radius:0px;
     }
 `
@@ -143,6 +149,10 @@ const CompSection = styled.div`
 
     }
 `
+const Link = styled.a`
+    text-decoration:none;
+    color:white;
+`
 
 function OddsApi(){
 
@@ -168,6 +178,7 @@ function OddsApi(){
                       <p>{data.Name}</p>
                     </Tournament>
                     <div>
+                    <Link href="https://ggbetpromo.com/l/65427cd6110b77ce380d8810">
                     {data.Matches.map(match => (
                         <DataRow>
                             <Time>
@@ -219,7 +230,7 @@ function OddsApi(){
                             </CompContainer>
                         </DataRow>
                     ))}
-
+                    </Link>
                     </div>
                 </div>
             ))}

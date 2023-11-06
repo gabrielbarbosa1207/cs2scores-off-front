@@ -20,19 +20,23 @@ const Time = styled.div`
     gap:10px;
     margin: 0px;
 `
-
 const DataRow = styled.div`
-    display: flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:center;
-    padding:7px 7px;
-    background-color: #252525;
-    margin:5px 0px;
-    font-size:9px;
-    font-weigth:300;
-    
-    `
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  background-color: #252525;
+  margin: 5px 0px;
+  font-size: 9px;
+  font-weight: 300; /* Corrected the property name from 'font-weigth' to 'font-weight' */
+  
+  &:hover {
+    background-color: #353535; /* New background color on hover */
+    cursor: pointer; /* Optional: Changes the cursor to a pointer to indicate it's clickable */
+    /* You can add more styles here that you want to apply on hover */
+  }
+`
 
 const MatchType = styled.p`
     margin:0px;
@@ -84,7 +88,7 @@ const OperatorDiv = styled.div`
     cursor:pointer;
 
     @media (min-width:850px){
-        background-color: #252525;
+        background-color: transparent;
         border-radius:0px;
     }
 `
@@ -148,6 +152,11 @@ const MainContainer = styled.div`
     }
 `
 
+const Link = styled.a`
+    text-decoration:none;
+    color:white;
+`
+
 function MatchesAPI(){
 
     const [externalData, setExternalData] = useState([])
@@ -171,6 +180,7 @@ function MatchesAPI(){
                       <p>{data.Name}</p>
                     </Tournament>
                     <div>
+                    <Link href="https://ggbetpromo.com/l/65427cd6110b77ce380d8810">
                     {data.Matches.map(match => (
                         <DataRow>
                             <Time>
@@ -217,6 +227,8 @@ function MatchesAPI(){
                             </CompContainer>
                         </DataRow>
                     ))}
+
+                    </Link>
 
                     </div>
                 </div>

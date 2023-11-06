@@ -6,16 +6,19 @@ import OddsApi from "../../../components/api/odds/api-odds";
 import { Helmet } from "react-helmet"
 import SideMenu from "../../../components/partials/side-menu";
 import Background from "../../../components/images/bg-vlt.svg"
+import Banner from "../../../components/images/cs2-scores-banner.png"
+
 
 
 const GlobalStyle = createGlobalStyle`
 html,body{
-    margin: 0px;
+    margin: 0px auto;
     padding: 0px 0px 40px 0px;
     background-color:#1c1c1c;
     color:white;
     font-family: 'Inter', sans-serif;
     overflow-x:hidden !important;
+    max-width:1400px;
 
     @media (min-width:780px){
         padding: 0px 3px 40px 0px;
@@ -102,7 +105,7 @@ const SideAds = styled.div`
     display:none;
 
     @media (min-width:780px){
-        width: 300px;
+        width: 130px;
         display:block;
     }
 `;
@@ -112,7 +115,8 @@ const SideBar = styled.div`
 
     @media (min-width:780px){
         display: block;
-        width: 305px;
+        width: 120px;
+        margin-left: 5px;
     }
 `;
 
@@ -123,14 +127,7 @@ const DataSection = styled.div`
     position:relative;
 `
 
-const Iframe = styled.iframe`
-    width:290px;
-    height:600px;
-    margin: 5px auto;
-    overflow-x:hidden;
-    display:block;
-    border:1px solid #1c1c1c;
-`
+
 
 
 function OddsRoute() {
@@ -221,8 +218,9 @@ function OddsRoute() {
                         <OddsApi />
                         <SideAds>
                             <SideBar>
-                                <Iframe src="https://valorantbettingsites.com/go/ggbet">
-                                </Iframe>
+                            <a href="https://ggbetpromo.com/l/65427cd6110b77ce380d8810">
+                                <img src={Banner} alt="Banner" />                                
+                            </a>
                             </SideBar>
                         </SideAds>
                     </DataSection>
